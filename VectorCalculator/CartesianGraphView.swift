@@ -9,10 +9,15 @@
 import UIKit
 
 class CartesianGraphView: UIView {
-    @IBInspectable var startColor: UIColor = UIColor.whiteColor()
+    @IBInspectable var startColor: UIColor = UIColor.orangeColor()
     @IBInspectable var endColor: UIColor = UIColor.orangeColor()
+    
+    let topBorder:CGFloat = 30
+    let bottomBorder:CGFloat = 30
+    let margin:CGFloat = 30
+    let maxValue = 20
 
-    var graphPoints:[Int] = [4, 2, 6, 4, 5, 8, 3]
+    var graphPoints:[Int] = [5, 0, 6, 4, 20, 8, 3]
 
     override func drawRect(rect: CGRect) {
         let width = rect.width
@@ -49,37 +54,31 @@ class CartesianGraphView: UIView {
             0)
 
         //calculate the x point
-        let margin:CGFloat = 20.0
         var columnXPoint = { (column:Int) -> CGFloat in
             //Calculate gap between points
-            let spacer = (width - margin*2 - 4) / CGFloat((self.graphPoints.count - 1))
+            let spacer = (width - self.margin*2 - 4) / 20
             var x:CGFloat = CGFloat(column) * spacer
-            x += margin + 2
+            x += self.margin + 2
             return x
         }
         
         // calculate the y point
-        let topBorder:CGFloat = 60
-        let bottomBorder:CGFloat = 50
         let graphHeight = height - topBorder - bottomBorder
-        let maxValue = maxElement(graphPoints)
+        let graphWidth = width - margin*2
         var columnYPoint = { (graphPoint:Int) -> CGFloat in
-            var y:CGFloat = CGFloat(graphPoint) /
-                CGFloat(maxValue) * graphHeight
-            y = graphHeight + topBorder - y // Flip the graph
+            var y:CGFloat = CGFloat(graphPoint) / CGFloat(self.maxValue) * graphHeight
+            y = graphHeight + self.topBorder - y // Flip the graph
             return y
         }
         
         // draw the line graph
-        
         UIColor.whiteColor().setFill()
         UIColor.whiteColor().setStroke()
         
         //set up the points line
         var graphPath = UIBezierPath()
         //go to start of line
-        graphPath.moveToPoint(CGPoint(x:columnXPoint(0),
-            y:columnYPoint(graphPoints[0])))
+        graphPath.moveToPoint(CGPoint(x:columnXPoint(0), y:columnYPoint(graphPoints[0])))
         
         //add points for each item in the graphPoints array
         //at the correct (x, y) for the point
@@ -119,7 +118,68 @@ class CartesianGraphView: UIView {
         //draw the line on top of the clipped gradient
         graphPath.lineWidth = 2.0
         graphPath.stroke()
+        
+        //Draw the circles on top of graph stroke
+        for i in 0..<graphPoints.count {
+            var point = CGPoint(x:columnXPoint(i), y:columnYPoint(graphPoints[i]))
+            point.x -= 5.0/2
+            point.y -= 5.0/2
+            
+            let circle = UIBezierPath(ovalInRect:
+                CGRect(origin: point,
+                    size: CGSize(width: 5.0, height: 5.0)))
+            circle.fill()
+        }
+        
+        //Draw horizontal/vertical graph lines on the top of everything
+        var linePath = UIBezierPath()
+        
+        //top line
+        linePath.moveToPoint(CGPoint(x:margin, y: topBorder))
+        linePath.addLineToPoint(CGPoint(x: width - margin, y:topBorder))
+        
+        //(3/4) line
+        linePath.moveToPoint(CGPoint(x:margin, y: (graphHeight*3)/4 + topBorder))
+        linePath.addLineToPoint(CGPoint(x:width - margin, y:(graphHeight*3)/4 + topBorder))
+        
+        //center line
+        linePath.moveToPoint(CGPoint(x:margin, y: graphHeight/2 + topBorder))
+        linePath.addLineToPoint(CGPoint(x:width - margin, y:graphHeight/2 + topBorder))
+        
+        //(1/4) line
+        linePath.moveToPoint(CGPoint(x:margin, y: graphHeight/4 + topBorder))
+        linePath.addLineToPoint(CGPoint(x:width - margin, y:graphHeight/4 + topBorder))
+        
+        //bottom line
+        linePath.moveToPoint(CGPoint(x:margin, y:height - bottomBorder))
+        linePath.addLineToPoint(CGPoint(x:width - margin, y:height - bottomBorder))
+        
+        //left line
+        linePath.moveToPoint(CGPoint(x:margin, y:height - bottomBorder))
+        linePath.addLineToPoint(CGPoint(x:margin, y:topBorder))
+        
+        //left+5 line
+        linePath.moveToPoint(CGPoint(x:margin + graphWidth/4, y:height - bottomBorder))
+        linePath.addLineToPoint(CGPoint(x:margin + graphWidth/4, y:topBorder))
+        
+        //center line
+        linePath.moveToPoint(CGPoint(x:margin + graphWidth/2, y:height - bottomBorder))
+        linePath.addLineToPoint(CGPoint(x:margin + graphWidth/2, y:topBorder))
+        
+        //right-5 line
+        linePath.moveToPoint(CGPoint(x:margin + (graphWidth*3)/4, y:height - bottomBorder))
+        linePath.addLineToPoint(CGPoint(x:margin + (graphWidth*3)/4, y:topBorder))
+        
+        //right-5 line
+        linePath.moveToPoint(CGPoint(x:width - margin, y:height - bottomBorder))
+        linePath.addLineToPoint(CGPoint(x:width - margin, y:topBorder))
+        
+        let color = UIColor(white: 1.0, alpha: 0.3)
+        color.setStroke()
+        
+        linePath.lineWidth = 1.0
+        linePath.stroke()
 
     }
-
+    
 }
