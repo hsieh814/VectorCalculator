@@ -18,7 +18,6 @@ class CartesianGraphView: UIView {
     let margin:CGFloat = 30
     let maxValue = 20
 
-    var graphPoints:[Int] = [5, 0, 6, 4, 20, 8, 3]
     var a = Vector(x: 0, y: 0, z: 0)
     var b = Vector(x: 0, y: 0, z: 0)
     var c = Vector(x: 0, y: 0, z: 0)
@@ -75,26 +74,22 @@ class CartesianGraphView: UIView {
             return y
         }
         
-        // draw the line graph
-        UIColor.whiteColor().setFill()
-        UIColor.whiteColor().setStroke()
-        
         //set up the points line
         var graphPathA = UIBezierPath()
         var graphPathB = UIBezierPath()
         var graphPathC = UIBezierPath()
         
         // Draw vector A
-        graphPathA.moveToPoint(CGPoint(x: 0, y: 0))
-        graphPathA.addLineToPoint(CGPoint(x: a.x, y: a.y))
+        graphPathA.moveToPoint(CGPoint(x: columnXPoint(0), y: columnYPoint(0)))
+        graphPathA.addLineToPoint(CGPoint(x: columnXPoint(a.x), y: columnYPoint(a.y)))
         
         // Draw vector B
-        graphPathB.moveToPoint(CGPoint(x: 0, y: 0))
-        graphPathB.addLineToPoint(CGPoint(x: b.x, y: b.y))
+        graphPathB.moveToPoint(CGPoint(x: columnXPoint(0), y: columnYPoint(0)))
+        graphPathB.addLineToPoint(CGPoint(x: columnXPoint(b.x), y: columnYPoint(b.y)))
         
         // Draw vector B
-        graphPathC.moveToPoint(CGPoint(x: 0, y: 0))
-        graphPathC.addLineToPoint(CGPoint(x: c.x, y: c.y))
+        graphPathC.moveToPoint(CGPoint(x: columnXPoint(0), y: columnYPoint(0)))
+        graphPathC.addLineToPoint(CGPoint(x: columnXPoint(c.x), y: columnYPoint(c.y)))
         
         //add points for each item in the graphPoints array
         //at the correct (x, y) for the point
@@ -133,11 +128,19 @@ class CartesianGraphView: UIView {
         CGContextDrawLinearGradient(context, gradient, startPoint, endPoint, 0)
         CGContextRestoreGState(context)
         
-        //draw the line on top of the clipped gradient
+        //draw the line on top of the clipped gradient with different colors
+        UIColor.cyanColor().setFill()
+        UIColor.cyanColor().setStroke()
         graphPathA.lineWidth = 2.0
         graphPathA.stroke()
+        
+        UIColor.greenColor().setFill()
+        UIColor.greenColor().setStroke()
         graphPathB.lineWidth = 2.0
         graphPathB.stroke()
+        
+        UIColor.yellowColor().setFill()
+        UIColor.yellowColor().setStroke()
         graphPathC.lineWidth = 2.0
         graphPathC.stroke()
         

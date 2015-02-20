@@ -20,7 +20,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var calculate: UIButton!
     @IBOutlet weak var result: UILabel!
     
-    @IBOutlet weak var containerView: UIView!
     @IBOutlet var graphView: CartesianGraphView!
 
     override func viewDidLoad() {
@@ -44,33 +43,37 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func startCalculation(sender: UIButton) {
-        var ax = Ax.text.toInt();
-        var ay = Ay.text.toInt();
-        var bx = Bx.text.toInt();
-        var by = By.text.toInt();
+        var ax = Ax.text.toInt()
+        var ay = Ay.text.toInt()
+        var bx = Bx.text.toInt()
+        var by = By.text.toInt()
         
-        let a = Vector(x: ax!, y: ay!, z: 0);
-        let b = Vector(x: bx!, y: by!, z: 0);
+        let a = Vector(x: ax!, y: ay!, z: 0)
+        let b = Vector(x: bx!, y: by!, z: 0)
+        
+        graphView.a = a
+        graphView.b = b
+        graphView.setNeedsDisplay();
         
         if (validateCoordinates(a) && validateCoordinates(b)) {
         
             switch(operations.selectedSegmentIndex) {
             case 0:
                 // Vector Addition
-                let v = vectorAddition(a, b: b);
-                result.text = ("\(v.x), \(v.y), \(v.z)");
-                break;
+                let v = vectorAddition(a, b: b)
+                result.text = ("\(v.x), \(v.y), \(v.z)")
+                break
             case 1:
                 // Scalar Product
-                result.text = String(scalarProduct(a, b: b));
-                break;
+                result.text = String(scalarProduct(a, b: b))
+                break
             case 2:
                 // Vector Product
-                let v = vectorProduct(a, b: b);
-                result.text = ("\(v.x), \(v.y), \(v.z)");
-                break;
+                let v = vectorProduct(a, b: b)
+                result.text = ("\(v.x), \(v.y), \(v.z)")
+                break
             default:
-                println("Default");
+                println("Default")
                 break;
             }
             

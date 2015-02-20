@@ -49,8 +49,9 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="A:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bug-hS-mVw">
                                 <rect key="frame" x="16" y="93" width="16" height="21"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s8f-NI-aCX">
@@ -80,8 +81,9 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="B:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="goO-8O-90t">
                                 <rect key="frame" x="468" y="97" width="17" height="21"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Of9-WE-06j">
@@ -102,7 +104,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rfv-wT-pUd" customClass="CartesianGraphView" customModule="VectorCalculator" customModuleProvider="target">
-                                <rect key="frame" x="150" y="249" width="300" height="300"/>
+                                <rect key="frame" x="150" y="257" width="300" height="300"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GSN-CK-J4q">
                                         <rect key="frame" x="14" y="256" width="10" height="21"/>
@@ -180,7 +182,7 @@
                             <constraint firstItem="s8f-NI-aCX" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="6mz-5g-3nV"/>
                             <constraint firstItem="fQI-Cr-9m8" firstAttribute="width" secondItem="Afb-JN-Iiv" secondAttribute="width" id="8qW-u3-jNZ"/>
                             <constraint firstItem="E83-bW-zvi" firstAttribute="leading" secondItem="w7L-WO-Y5q" secondAttribute="trailing" constant="8" id="Ali-VD-OUv"/>
-                            <constraint firstItem="Rfv-wT-pUd" firstAttribute="top" secondItem="HLG-XK-Vg4" secondAttribute="bottom" constant="13" id="C1w-hs-PZJ"/>
+                            <constraint firstItem="Rfv-wT-pUd" firstAttribute="top" secondItem="HLG-XK-Vg4" secondAttribute="bottom" constant="18" id="C1w-hs-PZJ"/>
                             <constraint firstItem="bug-hS-mVw" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="KPf-3p-hZA"/>
                             <constraint firstItem="s8f-NI-aCX" firstAttribute="width" secondItem="E83-bW-zvi" secondAttribute="width" id="Mcd-ab-RLd"/>
                             <constraint firstAttribute="centerX" secondItem="HLG-XK-Vg4" secondAttribute="centerX" id="Ogn-fe-vEC"/>
@@ -201,6 +203,7 @@
                         <outlet property="Bx" destination="s8f-NI-aCX" id="E9N-Nm-6lT"/>
                         <outlet property="By" destination="E83-bW-zvi" id="2gW-tx-0sB"/>
                         <outlet property="calculate" destination="Of9-WE-06j" id="sbB-uI-0Up"/>
+                        <outlet property="graphView" destination="Rfv-wT-pUd" id="lVz-bm-48Y"/>
                         <outlet property="operations" destination="tfb-q3-8Yw" id="jst-wm-Ye6"/>
                         <outlet property="result" destination="HLG-XK-Vg4" id="BCP-v6-wPV"/>
                     </connections>
