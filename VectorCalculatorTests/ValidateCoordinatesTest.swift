@@ -8,7 +8,7 @@
 
 import XCTest
 
-class VectorCalculatorTests: XCTestCase {
+class ValidateCoordinatesTest: XCTestCase {
     let view = ViewController()
     
     override func setUp() {

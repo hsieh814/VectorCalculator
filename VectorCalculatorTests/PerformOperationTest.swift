@@ -10,7 +10,7 @@ import UIKit
 import XCTest
 
 class PerformOperationTest: XCTestCase {
-    let view = ViewController();
+    let view = ViewController()
 
     override func setUp() {
         super.setUp()
