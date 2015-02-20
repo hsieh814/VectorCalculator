@@ -20,6 +20,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var calculate: UIButton!
     @IBOutlet weak var result: UILabel!
     
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet var graphView: CartesianGraphView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         

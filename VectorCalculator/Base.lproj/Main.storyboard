@@ -102,7 +102,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rfv-wT-pUd" customClass="CartesianGraphView" customModule="VectorCalculator" customModuleProvider="target">
-                                <rect key="frame" x="139" y="280" width="300" height="300"/>
+                                <rect key="frame" x="150" y="249" width="300" height="300"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GSN-CK-J4q">
                                         <rect key="frame" x="14" y="256" width="10" height="21"/>
@@ -180,17 +180,17 @@
                             <constraint firstItem="s8f-NI-aCX" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="6mz-5g-3nV"/>
                             <constraint firstItem="fQI-Cr-9m8" firstAttribute="width" secondItem="Afb-JN-Iiv" secondAttribute="width" id="8qW-u3-jNZ"/>
                             <constraint firstItem="E83-bW-zvi" firstAttribute="leading" secondItem="w7L-WO-Y5q" secondAttribute="trailing" constant="8" id="Ali-VD-OUv"/>
+                            <constraint firstItem="Rfv-wT-pUd" firstAttribute="top" secondItem="HLG-XK-Vg4" secondAttribute="bottom" constant="13" id="C1w-hs-PZJ"/>
                             <constraint firstItem="bug-hS-mVw" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="KPf-3p-hZA"/>
                             <constraint firstItem="s8f-NI-aCX" firstAttribute="width" secondItem="E83-bW-zvi" secondAttribute="width" id="Mcd-ab-RLd"/>
                             <constraint firstAttribute="centerX" secondItem="HLG-XK-Vg4" secondAttribute="centerX" id="Ogn-fe-vEC"/>
                             <constraint firstItem="s8f-NI-aCX" firstAttribute="leading" secondItem="iO5-jv-tPi" secondAttribute="trailing" constant="9" id="Qgr-c8-hi1"/>
                             <constraint firstItem="zMj-UI-qPt" firstAttribute="leading" secondItem="bug-hS-mVw" secondAttribute="trailing" constant="17" id="aRY-xh-6Yu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="s8f-NI-aCX" secondAttribute="trailing" constant="5" id="e9Y-yT-reS"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Rfv-wT-pUd" secondAttribute="bottom" constant="30" id="eiO-Uz-PrV"/>
-                            <constraint firstAttribute="centerX" secondItem="Rfv-wT-pUd" secondAttribute="centerX" id="fqg-1f-PnO"/>
                             <constraint firstItem="w7L-WO-Y5q" firstAttribute="centerX" secondItem="iO5-jv-tPi" secondAttribute="centerX" constant="0.5" id="gDf-dD-TNW"/>
                             <constraint firstAttribute="centerX" secondItem="Of9-WE-06j" secondAttribute="centerX" id="gzt-uB-gDX"/>
                             <constraint firstItem="zMj-UI-qPt" firstAttribute="centerX" secondItem="NPO-uX-Cn8" secondAttribute="centerX" constant="-0.5" id="qKD-gM-8uA"/>
+                            <constraint firstAttribute="centerX" secondItem="Rfv-wT-pUd" secondAttribute="centerX" id="s67-Ng-5ln"/>
                             <constraint firstItem="fQI-Cr-9m8" firstAttribute="leading" secondItem="zMj-UI-qPt" secondAttribute="trailing" constant="9" id="zf4-qw-gX1"/>
                             <constraint firstItem="iO5-jv-tPi" firstAttribute="leading" secondItem="goO-8O-90t" secondAttribute="trailing" constant="14" id="zvs-Wf-0MV"/>
                         </constraints>
@@ -206,6 +206,24 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="TCF-7y-gpK">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="eHh-gP-ZFB" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hKB-GQ-ptR"/>
+                        <viewControllerLayoutGuide type="bottom" id="TRa-I5-TKh"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="7mK-Jq-lch">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9MS-sG-2FR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>

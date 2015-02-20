@@ -13,14 +13,14 @@
 		BF52C5741A93F2260056EE66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF52C5721A93F2260056EE66 /* Main.storyboard */; };
 		BF52C5761A93F2260056EE66 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF52C5751A93F2260056EE66 /* Images.xcassets */; };
 		BF52C5791A93F2260056EE66 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF52C5771A93F2260056EE66 /* LaunchScreen.xib */; };
-		BF52C5911A9418FD0056EE66 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52C5701A93F2260056EE66 /* ViewController.swift */; };
 		BF52C5921A94214F0056EE66 /* ValidateCoordinatesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52C5841A93F2260056EE66 /* ValidateCoordinatesTest.swift */; };
 		BF52C5961A9429280056EE66 /* VecorOperationsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52C5951A9429280056EE66 /* VecorOperationsTest.swift */; };
 		BF52C59A1A9431250056EE66 /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52C5991A9431250056EE66 /* Vector.swift */; };
-		BF52C59B1A9431510056EE66 /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52C5991A9431250056EE66 /* Vector.swift */; };
 		BF52C5EF1A9449E50056EE66 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF52C5EE1A9449E50056EE66 /* QuartzCore.framework */; };
-		BFB7FAE41A96449E00C3172C /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB7FAE31A96449E00C3172C /* GraphView.swift */; };
 		BFB7FAE71A964AA000C3172C /* CartesianGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB7FAE61A964AA000C3172C /* CartesianGraphView.swift */; };
+		BFB7FAE81A96C23000C3172C /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52C5991A9431250056EE66 /* Vector.swift */; };
+		BFB7FAE91A96C23B00C3172C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52C5701A93F2260056EE66 /* ViewController.swift */; };
+		BFB7FAEA1A96C23F00C3172C /* CartesianGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB7FAE61A964AA000C3172C /* CartesianGraphView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +48,6 @@
 		BF52C5951A9429280056EE66 /* VecorOperationsTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VecorOperationsTest.swift; sourceTree = "<group>"; };
 		BF52C5991A9431250056EE66 /* Vector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector.swift; sourceTree = "<group>"; };
 		BF52C5EE1A9449E50056EE66 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		BFB7FAE31A96449E00C3172C /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		BFB7FAE51A964A6400C3172C /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		BFB7FAE61A964AA000C3172C /* CartesianGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartesianGraphView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,9 +96,8 @@
 				BF52C56B1A93F2260056EE66 /* AppDelegate.swift */,
 				BF52C5701A93F2260056EE66 /* ViewController.swift */,
 				BF52C5991A9431250056EE66 /* Vector.swift */,
-				BFB7FAE31A96449E00C3172C /* GraphView.swift */,
-				BFB7FAE51A964A6400C3172C /* MyPlayground.playground */,
 				BFB7FAE61A964AA000C3172C /* CartesianGraphView.swift */,
+				BFB7FAE51A964A6400C3172C /* MyPlayground.playground */,
 				BF52C5721A93F2260056EE66 /* Main.storyboard */,
 				BF52C5751A93F2260056EE66 /* Images.xcassets */,
 				BF52C5771A93F2260056EE66 /* LaunchScreen.xib */,
@@ -235,7 +233,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFB7FAE41A96449E00C3172C /* GraphView.swift in Sources */,
 				BF52C5711A93F2260056EE66 /* ViewController.swift in Sources */,
 				BFB7FAE71A964AA000C3172C /* CartesianGraphView.swift in Sources */,
 				BF52C56F1A93F2260056EE66 /* VectorCalculator.xcdatamodeld in Sources */,
@@ -249,9 +246,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF52C5921A94214F0056EE66 /* ValidateCoordinatesTest.swift in Sources */,
+				BFB7FAE81A96C23000C3172C /* Vector.swift in Sources */,
+				BFB7FAEA1A96C23F00C3172C /* CartesianGraphView.swift in Sources */,
+				BFB7FAE91A96C23B00C3172C /* ViewController.swift in Sources */,
 				BF52C5961A9429280056EE66 /* VecorOperationsTest.swift in Sources */,
-				BF52C59B1A9431510056EE66 /* Vector.swift in Sources */,
-				BF52C5911A9418FD0056EE66 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
