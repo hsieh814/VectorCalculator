@@ -119,7 +119,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     /* Calls the corresponding method for calculations */
     func performOperation(op: Int, a: Vector, b: Vector, c: Vector) -> String {
         var msg = ""
-        
         switch(op) {
         case 0:
             // Vector Addition
@@ -151,7 +150,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
 
-    /* Validates that x and y are not nil and are greater or equal to 0 and less than or equal to 10 */
+    /* Validates that x and y are not nil and are greater or equal to 0 and less than or equal to 20 */
     func validateCoordinates(x: Int?, y: Int?) -> Bool {
         if (x == nil || y == nil) {
             return false;
