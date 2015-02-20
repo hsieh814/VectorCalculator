@@ -17,14 +17,20 @@ class CartesianGraphView: UIView {
     let bottomBorder:CGFloat = 30
     let margin:CGFloat = 30
     let maxValue = 20
+    var width: CGFloat = 0
+    var height: CGFloat = 0
+    var graphWidth: CGFloat = 0
+    var graphHeight: CGFloat = 0
 
     var a = Vector(x: 0, y: 0)
     var b = Vector(x: 0, y: 0)
     var c = Vector(x: 0, y: 0)
     
     override func drawRect(rect: CGRect) {
-        let width = rect.width
-        let height = rect.height
+        width = rect.width
+        height = rect.height
+        graphWidth = width - margin*2
+        graphHeight = height - topBorder - bottomBorder
         
         //set up background clipping area
         var path = UIBezierPath(roundedRect: rect,
@@ -55,24 +61,6 @@ class CartesianGraphView: UIView {
             startPoint,
             endPoint,
             0)
-
-        //calculate the x point
-        var columnXPoint = { (column:Int) -> CGFloat in
-            //Calculate gap between points
-            let spacer = (width - self.margin*2 - 4) / 20
-            var x:CGFloat = CGFloat(column) * spacer
-            x += self.margin + 2
-            return x
-        }
-        
-        // calculate the y point
-        let graphHeight = height - topBorder - bottomBorder
-        let graphWidth = width - margin*2
-        var columnYPoint = { (graphPoint:Int) -> CGFloat in
-            var y:CGFloat = CGFloat(graphPoint) / CGFloat(self.maxValue) * graphHeight
-            y = graphHeight + self.topBorder - y // Flip the graph
-            return y
-        }
         
         //set up the points line
         var graphPathA = UIBezierPath()
@@ -80,18 +68,18 @@ class CartesianGraphView: UIView {
         var graphPathC = UIBezierPath()
         
         // Draw vector A
-        graphPathA.moveToPoint(CGPoint(x: columnXPoint(0), y: columnYPoint(0)))
-        graphPathA.addLineToPoint(CGPoint(x: columnXPoint(a.x), y: columnYPoint(a.y)))
+        graphPathA.moveToPoint(CGPoint(x: calculateXLocation(0), y: calculateYLocation(0)))
+        graphPathA.addLineToPoint(CGPoint(x: calculateXLocation(a.x), y: calculateYLocation(a.y)))
         
         // Draw vector B
-        graphPathB.moveToPoint(CGPoint(x: columnXPoint(0), y: columnYPoint(0)))
-        graphPathB.addLineToPoint(CGPoint(x: columnXPoint(b.x), y: columnYPoint(b.y)))
+        graphPathB.moveToPoint(CGPoint(x: calculateXLocation(0), y: calculateYLocation(0)))
+        graphPathB.addLineToPoint(CGPoint(x: calculateXLocation(b.x), y: calculateYLocation(b.y)))
         
         // Draw vector C
-        graphPathC.moveToPoint(CGPoint(x: columnXPoint(0), y: columnYPoint(0)))
-        graphPathC.addLineToPoint(CGPoint(x: columnXPoint(c.x), y: columnYPoint(c.y)))
+        graphPathC.moveToPoint(CGPoint(x: calculateXLocation(0), y: calculateYLocation(0)))
+        graphPathC.addLineToPoint(CGPoint(x: calculateXLocation(c.x), y: calculateYLocation(c.y)))
         
-        //draw the line on top of the clipped gradient with different colors
+        // Draw the line on top of the clipped gradient with different colors
         UIColor.cyanColor().setFill()
         UIColor.cyanColor().setStroke()
         graphPathA.lineWidth = 2.0
@@ -107,7 +95,7 @@ class CartesianGraphView: UIView {
         graphPathC.lineWidth = 2.0
         graphPathC.stroke()
         
-        //Draw horizontal/vertical graph lines on the top of everything
+        // Draw horizontal/vertical graph lines on the top of everything
         var linePath = UIBezierPath()
         
         //horizontal-top line
@@ -155,6 +143,22 @@ class CartesianGraphView: UIView {
         
         linePath.lineWidth = 1.0
         linePath.stroke()
+    }
+    
+    /* Takes the x value and calculates the corresponding location on the graph */
+    func calculateXLocation(x: Int) -> CGFloat {
+        //Calculate gap between points (need to accomondate for width of the graph lines)
+        let spacer = (self.width - self.margin*2 - 4) / 20
+        var x:CGFloat = CGFloat(x) * spacer
+        x += self.margin + 2
+        return x
+    }
+    
+    /* Takes the y value and calculates the corresponding location on the graph */
+    func calculateYLocation(y: Int) -> CGFloat {
+        var y:CGFloat = CGFloat(y) / CGFloat(self.maxValue) * self.graphHeight
+        y = self.graphHeight + self.topBorder - y // Flip the graph; y starts from teh right side
+        return y
     }
     
 }
