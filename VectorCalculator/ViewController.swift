@@ -16,6 +16,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var Ay: UITextField!
     @IBOutlet weak var Bx: UITextField!
     @IBOutlet weak var By: UITextField!
+    @IBOutlet weak var Cx: UITextField!
+    @IBOutlet weak var Cy: UITextField!
+    
+    @IBOutlet weak var CLabel: UILabel!
+    @IBOutlet weak var CxLabel: UILabel!
+    @IBOutlet weak var CyLabel: UILabel!
     
     @IBOutlet weak var calculate: UIButton!
     @IBOutlet weak var result: UILabel!
@@ -41,19 +47,50 @@ class ViewController: UIViewController, UITextFieldDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    /* Called when user switches segment control */
+    @IBAction func changeOperation(sender: AnyObject) {
+        if (operations.selectedSegmentIndex == 1) {
+            hideCVectorInputs(true)
+        } else {
+            hideCVectorInputs(false)
+        }
+    }
+    
+    /* Hide C vector inputs */
+    func hideCVectorInputs(hide: Bool) {
+        if (hide) {
+            Cx.hidden = true
+            Cy.hidden = true
+            CxLabel.hidden = true
+            CyLabel.hidden = true
+            CLabel.hidden = true
+        } else {
+            Cx.hidden = false
+            Cy.hidden = false
+            CxLabel.hidden = false
+            CyLabel.hidden = false
+            CLabel.hidden = false
+        }
+    }
 
     @IBAction func startCalculation(sender: UIButton) {
         var ax = Ax.text.toInt()
         var ay = Ay.text.toInt()
         var bx = Bx.text.toInt()
         var by = By.text.toInt()
+        var cx = Cx.text.toInt()
+        var cy = Cy.text.toInt()
         
         let a = Vector(x: ax!, y: ay!, z: 0)
         let b = Vector(x: bx!, y: by!, z: 0)
+        let c = Vector(x: cx!, y: cy!, z: 0)
         
+        // Update graph
         graphView.a = a
         graphView.b = b
-        graphView.setNeedsDisplay();
+        graphView.c = c
+        graphView.setNeedsDisplay()
         
         if (validateCoordinates(a) && validateCoordinates(b)) {
         
