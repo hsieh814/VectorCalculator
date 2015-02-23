@@ -25,10 +25,28 @@ class ValidateCoordinatesTest: XCTestCase {
         XCTAssert(result, "Error in testValidateCoordinatesWithValidInputs")
     }
     
-    // Tests validateCoordinates() with invalid params
-    func testValidateCoordinatesWithInvalidInputs() {
+    // Tests validateCoordinates() with invalid min x param
+    func testValidateCoordinatesWithInvalidMinXInputs() {
         let result = view.validateCoordinates(-3, y: 11)
-        XCTAssertFalse(result, "Error in testValidateCoordinatesWithInvalidInputs")
+        XCTAssertFalse(result, "Error in testValidateCoordinatesWithInvalidMinXInputs")
+    }
+    
+    // Tests validateCoordinates() with invalid max x param
+    func testValidateCoordinatesWithInvalidMaxXInputs() {
+        let result = view.validateCoordinates(28, y: 11)
+        XCTAssertFalse(result, "Error in testValidateCoordinatesWithInvalidMaxXInputs")
+    }
+    
+    // Tests validateCoordinates() with invalid y param
+    func testValidateCoordinatesWithInvalidMinYInputs() {
+        let result = view.validateCoordinates(5, y: -6)
+        XCTAssertFalse(result, "Error in testValidateCoordinatesWithInvalidYMinYInputs")
+    }
+    
+    // Tests validateCoordinates() with invalid y param
+    func testValidateCoordinatesWithInvalidMaxYInputs() {
+        let result = view.validateCoordinates(5, y: 25)
+        XCTAssertFalse(result, "Error in testValidateCoordinatesWithInvalidYMaxYInputs")
     }
     
     // Tests validateCoordinates() with valid boundry params

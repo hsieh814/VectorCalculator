@@ -157,7 +157,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         } else if (x < 0 || x > 20 || y < 0 || y > 20) {
             return false;
         }
-        return true;
+        return true
     }
     
     /* Calculates vector addition */

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		BF4B8A6A1A97A23200B43A41 /* ValidateCoordinatesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4B8A691A97A23200B43A41 /* ValidateCoordinatesTest.swift */; };
-		BF4B8A6C1A97A76800B43A41 /* CartesianGraphViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4B8A6B1A97A76800B43A41 /* CartesianGraphViewTest.swift */; };
 		BF52C56C1A93F2260056EE66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52C56B1A93F2260056EE66 /* AppDelegate.swift */; };
 		BF52C56F1A93F2260056EE66 /* VectorCalculator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF52C56D1A93F2260056EE66 /* VectorCalculator.xcdatamodeld */; };
 		BF52C5711A93F2260056EE66 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52C5701A93F2260056EE66 /* ViewController.swift */; };
@@ -17,9 +16,6 @@
 		BF52C5791A93F2260056EE66 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF52C5771A93F2260056EE66 /* LaunchScreen.xib */; };
 		BF52C59A1A9431250056EE66 /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52C5991A9431250056EE66 /* Vector.swift */; };
 		BF52C5EF1A9449E50056EE66 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF52C5EE1A9449E50056EE66 /* QuartzCore.framework */; };
-		BFA3FD9F1A970200002A09A4 /* CreateVectorFromInputsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA3FD9E1A970200002A09A4 /* CreateVectorFromInputsTest.swift */; };
-		BFA3FDA11A9702DF002A09A4 /* VectorOperationsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA3FDA01A9702DF002A09A4 /* VectorOperationsTest.swift */; };
-		BFA3FDA31A97044A002A09A4 /* PerformOperationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA3FDA21A97044A002A09A4 /* PerformOperationTest.swift */; };
 		BFB7FAE71A964AA000C3172C /* CartesianGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB7FAE61A964AA000C3172C /* CartesianGraphView.swift */; };
 		BFB7FAE81A96C23000C3172C /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52C5991A9431250056EE66 /* Vector.swift */; };
 		BFB7FAE91A96C23B00C3172C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52C5701A93F2260056EE66 /* ViewController.swift */; };
@@ -38,7 +34,6 @@
 
 /* Begin PBXFileReference section */
 		BF4B8A691A97A23200B43A41 /* ValidateCoordinatesTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidateCoordinatesTest.swift; sourceTree = "<group>"; };
-		BF4B8A6B1A97A76800B43A41 /* CartesianGraphViewTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartesianGraphViewTest.swift; sourceTree = "<group>"; };
 		BF52C5661A93F2260056EE66 /* VectorCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VectorCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF52C56A1A93F2260056EE66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF52C56B1A93F2260056EE66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,9 +46,6 @@
 		BF52C5831A93F2260056EE66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF52C5991A9431250056EE66 /* Vector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector.swift; sourceTree = "<group>"; };
 		BF52C5EE1A9449E50056EE66 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		BFA3FD9E1A970200002A09A4 /* CreateVectorFromInputsTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateVectorFromInputsTest.swift; sourceTree = "<group>"; };
-		BFA3FDA01A9702DF002A09A4 /* VectorOperationsTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorOperationsTest.swift; sourceTree = "<group>"; };
-		BFA3FDA21A97044A002A09A4 /* PerformOperationTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformOperationTest.swift; sourceTree = "<group>"; };
 		BFB7FAE51A964A6400C3172C /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		BFB7FAE61A964AA000C3172C /* CartesianGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartesianGraphView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,11 +116,7 @@
 		BF52C5811A93F2260056EE66 /* VectorCalculatorTests */ = {
 			isa = PBXGroup;
 			children = (
-				BF4B8A6B1A97A76800B43A41 /* CartesianGraphViewTest.swift */,
 				BF4B8A691A97A23200B43A41 /* ValidateCoordinatesTest.swift */,
-				BFA3FDA21A97044A002A09A4 /* PerformOperationTest.swift */,
-				BFA3FD9E1A970200002A09A4 /* CreateVectorFromInputsTest.swift */,
-				BFA3FDA01A9702DF002A09A4 /* VectorOperationsTest.swift */,
 				BF52C5821A93F2260056EE66 /* Supporting Files */,
 			);
 			path = VectorCalculatorTests;
@@ -254,14 +242,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFA3FDA31A97044A002A09A4 /* PerformOperationTest.swift in Sources */,
 				BF4B8A6A1A97A23200B43A41 /* ValidateCoordinatesTest.swift in Sources */,
-				BFA3FDA11A9702DF002A09A4 /* VectorOperationsTest.swift in Sources */,
 				BFB7FAE81A96C23000C3172C /* Vector.swift in Sources */,
 				BFB7FAEA1A96C23F00C3172C /* CartesianGraphView.swift in Sources */,
 				BFB7FAE91A96C23B00C3172C /* ViewController.swift in Sources */,
-				BF4B8A6C1A97A76800B43A41 /* CartesianGraphViewTest.swift in Sources */,
-				BFA3FD9F1A970200002A09A4 /* CreateVectorFromInputsTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
